@@ -1,0 +1,166 @@
+/* ========== RESET (Better consistency) ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --background: #f9fafb;
+  --text: #111827;
+  --white: #ffffff;
+  --focus: #f59e0b;
+}
+
+/* ========== BODY ========== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* ========== SKIP LINK (Accessibility) ========== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--focus);
+  color: black;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ========== HEADER & NAV ========== */
+header {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+  padding: 2rem;
+}
+
+/* ========== SECTIONS ========== */
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* ========== ARTICLES (Projects) ========== */
+article {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ========== LISTS ========== */
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========== FORM (Accessible Styling) ========== */
+form {
+  max-width: 500px;
+}
+
+fieldset {
+  border: 2px solid var(--secondary);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Focus states for accessibility */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Button */
+button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--secondary);
+  color: var(--white);
+  margin-top: 2rem;
+}
