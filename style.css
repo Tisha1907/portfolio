@@ -1,4 +1,4 @@
-/* ========== RESET (Better consistency) ========== */
+/* ========== RESET ========== */
 *,
 *::before,
 *::after {
@@ -14,18 +14,31 @@
   --background: #f9fafb;
   --text: #111827;
   --white: #ffffff;
+  --border: #d1d5db;
   --focus: #f59e0b;
 }
 
-/* ========== BODY ========== */
+/* ========== PAGE LAYOUT ========== */
+html,
 body {
-  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   background-color: var(--background);
   color: var(--text);
+  display: flex;
+  flex-direction: column;
 }
 
-/* ========== SKIP LINK (Accessibility) ========== */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* ========== SKIP LINK ========== */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -54,7 +67,7 @@ nav {
 }
 
 nav h1 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 nav ul {
@@ -66,36 +79,42 @@ nav ul {
 nav a {
   color: var(--white);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 nav a:hover,
 nav a:focus {
-  text-decoration: underline;
+  color: #93c5fd;
 }
 
 /* ========== MAIN CONTENT ========== */
-main {
-  padding: 2rem;
-}
-
-/* ========== SECTIONS ========== */
 section {
   margin-bottom: 2rem;
 }
 
 h2 {
-  margin-bottom: 1rem;
   color: var(--primary);
+  margin-bottom: 1rem;
 }
 
-/* ========== ARTICLES (Projects) ========== */
+p {
+  margin-bottom: 1rem;
+}
+
+/* ========== PROJECT CARDS ========== */
 article {
   background: var(--white);
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.2rem;
+  border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
 }
 
 /* ========== LISTS ========== */
@@ -103,7 +122,7 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-/* ========== FORM (Accessible Styling) ========== */
+/* ========== FORM ========== */
 form {
   max-width: 500px;
 }
@@ -111,7 +130,7 @@ form {
 fieldset {
   border: 2px solid var(--secondary);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 legend {
@@ -126,13 +145,14 @@ label {
 input,
 textarea {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.7rem;
   margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--text);
 }
 
-/* Focus states for accessibility */
 input:focus,
 textarea:focus,
 button:focus {
@@ -140,16 +160,18 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* Button */
+/* ========== BUTTONS ========== */
 button {
   margin-top: 1rem;
-  padding: 0.7rem;
+  padding: 0.75rem 1.2rem;
   border: none;
   background: var(--primary);
   color: var(--white);
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 button:hover {
@@ -163,4 +185,35 @@ footer {
   background: var(--secondary);
   color: var(--white);
   margin-top: 2rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+#projects article a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+#projects article a:hover {
+  background: #1d4ed8;
 }
